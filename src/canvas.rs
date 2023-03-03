@@ -1,7 +1,7 @@
 //! The `canvas` module puts raw bits into the QR code canvas.
 //!
-//!     use qrcode::types::{Version, EcLevel};
-//!     use qrcode::canvas::{Canvas, MaskPattern};
+//!     use qrencode::types::{Version, EcLevel};
+//!     use qrencode::canvas::{Canvas, MaskPattern};
 //!
 //!     let mut c = Canvas::new(Version::Normal(1), EcLevel::L);
 //!     c.draw_all_functional_patterns();
@@ -48,8 +48,8 @@ impl Module {
 
     /// Apply a mask to the unmasked modules.
     ///
-    ///     use qrcode::canvas::Module;
-    ///     use qrcode::types::Color;
+    ///     use qrencode::canvas::Module;
+    ///     use qrencode::types::Color;
     ///
     ///     assert_eq!(Module::Unmasked(Color::Light).mask(true), Module::Masked(Color::Dark));
     ///     assert_eq!(Module::Unmasked(Color::Dark).mask(true), Module::Masked(Color::Light));

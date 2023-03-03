@@ -4,7 +4,7 @@
 //!
 #![cfg_attr(feature = "image", doc = "```rust")]
 #![cfg_attr(not(feature = "image"), doc = "```ignore")]
-//! use qrcode::QrCode;
+//! use qrencode::QrCode;
 //! use image::Luma;
 //!
 //! // Encode some data into bits.
@@ -65,7 +65,7 @@ impl QrCode {
     /// This method uses the "medium" error correction level and automatically
     /// chooses the smallest QR code.
     ///
-    ///     use qrcode::QrCode;
+    ///     use qrencode::QrCode;
     ///
     ///     let code = QrCode::new(b"Some data").unwrap();
     ///
@@ -82,7 +82,7 @@ impl QrCode {
     ///
     /// This method automatically chooses the smallest QR code.
     ///
-    ///     use qrcode::{QrCode, EcLevel};
+    ///     use qrencode::{QrCode, EcLevel};
     ///
     ///     let code = QrCode::with_error_correction_level(b"Some data", EcLevel::H).unwrap();
     ///
@@ -98,13 +98,13 @@ impl QrCode {
     /// Constructs a new QR code for the given version and error correction
     /// level.
     ///
-    ///     use qrcode::{QrCode, Version, EcLevel};
+    ///     use qrencode::{QrCode, Version, EcLevel};
     ///
     ///     let code = QrCode::with_version(b"Some data", Version::Normal(5), EcLevel::M).unwrap();
     ///
     /// This method can also be used to generate Micro QR code.
     ///
-    ///     use qrcode::{QrCode, Version, EcLevel};
+    ///     use qrencode::{QrCode, Version, EcLevel};
     ///
     ///     let micro_code = QrCode::with_version(b"123", Version::Micro(1), EcLevel::L).unwrap();
     ///
@@ -133,8 +133,8 @@ impl QrCode {
     ///
     ///     #![allow(unused_must_use)]
     ///
-    ///     use qrcode::{QrCode, Version, EcLevel};
-    ///     use qrcode::bits::Bits;
+    ///     use qrencode::{QrCode, Version, EcLevel};
+    ///     use qrencode::bits::Bits;
     ///
     ///     let mut bits = Bits::new(Version::Normal(1));
     ///     bits.push_eci_designator(9);
@@ -228,7 +228,7 @@ impl QrCode {
     ///
     #[cfg_attr(feature = "image", doc = " ```rust")]
     #[cfg_attr(not(feature = "image"), doc = " ```ignore")]
-    /// # use qrcode::QrCode;
+    /// # use qrencode::QrCode;
     /// # use image::Rgb;
     ///
     /// let image = QrCode::new(b"hello").unwrap()

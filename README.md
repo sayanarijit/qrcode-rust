@@ -1,35 +1,31 @@
-qrcode-rust
-===========
+# qrencode
 
-[![Build status](https://travis-ci.org/kennytm/qrcode-rust.svg?branch=master)](https://travis-ci.org/kennytm/qrcode-rust)
-[![Coverage Status](https://coveralls.io/repos/github/kennytm/qrcode-rust/badge.svg?branch=coveralls)](https://coveralls.io/github/kennytm/qrcode-rust?branch=coveralls)
-[![crates.io](https://img.shields.io/crates/v/qrcode.svg)](https://crates.io/crates/qrcode)
-[![MIT OR Apache 2.0](https://img.shields.io/badge/license-MIT%20%2f%20Apache%202.0-blue.svg)](./LICENSE-APACHE.txt)
+A fork of [qm3ster/qrcode-rust](https://github.com/qm3ster/qrcode-rust), which is a fork of [kennytm/qrcode-rust](https://github.com/kennytm/qrcode-rust).
 
-QR code and Micro QR code encoder in Rust. [Documentation](https://docs.rs/qrcode).
+Since the original crate has stopped being maintained, and two of my projects
+depend on it, I'll be maintaining this fork until the original author returns.
+Any help from the community is appreciated.
 
-Cargo.toml
-----------
+## Cargo.toml
 
 ```toml
 [dependencies]
-qrcode = "0.11"
+qrencode = "*"
 ```
 
 The default settings will depend on the `image` crate. If you don't need image generation capability, disable the `default-features`:
 
 ```toml
 [dependencies]
-qrcode = { version = "0.11", default-features = false }
+qrencode = { version = "*", default-features = false }
 ```
 
-Example
--------
+## Example
 
 ## Image generation
 
 ```rust
-use qrcode::QrCode;
+use qrencode::QrCode;
 use image::Luma;
 
 fn main() {
@@ -51,7 +47,7 @@ Generates this image:
 ## String generation
 
 ```rust
-use qrcode::QrCode;
+use qrencode::QrCode;
 
 fn main() {
     let code = QrCode::new(b"Hello").unwrap();
@@ -92,8 +88,8 @@ Generates this output:
 ## SVG generation
 
 ```rust
-use qrcode::{QrCode, Version, EcLevel};
-use qrcode::render::svg;
+use qrencode::{QrCode, Version, EcLevel};
+use qrencode::render::svg;
 
 fn main() {
     let code = QrCode::with_version(b"01234567", Version::Micro(2), EcLevel::L).unwrap();
@@ -113,8 +109,8 @@ Generates this SVG:
 ## Unicode string generation
 
 ```rust
-use qrcode::QrCode;
-use qrcode::render::unicode;
+use qrencode::QrCode;
+use qrencode::render::unicode;
 
 fn main() {
     let code = QrCode::new("mow mow").unwrap();
